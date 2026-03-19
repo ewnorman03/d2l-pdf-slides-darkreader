@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 240px;
+      padding: 16px;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: #0b0b13;
+      color: #cdd6f4;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    header .icon { font-size: 20px; }
+
+    header h1 {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    #toggleBtn {
+      width: 100%;
+      padding: 10px 14px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 13px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.15s, transform 0.1s;
+    }
+
+    #toggleBtn:active { transform: scale(0.97); }
+
+    #toggleBtn.off {
+      background: #89b4fa;
+      color: #1e1e2e;
+    }
+
+    #toggleBtn.on {
+      background: #fab387;
+      color: #1e1e2e;
+    }
+
+    .status {
+      margin-top: 10px;
+      font-size: 11px;
+      color: #6c7086;
+      text-align: center;
+      min-height: 16px;
+    }
+
+    .persistent-row {
+      margin-top: 12px;
+      padding: 8px 10px;
+      background: #313244;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+    }
+
+    .persistent-label {
+      font-size: 11px;
+      color: #a6adc8;
+      line-height: 1.4;
+    }
+
+    /* Toggle switch */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 34px;
+      height: 20px;
+      flex-shrink: 0;
+    }
+
+    .switch input { opacity: 0; width: 0; height: 0; }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: #45475a;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .slider::before {
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 14px;
+      left: 3px;
+      top: 3px;
+      background: #cdd6f4;
+      border-radius: 50%;
+      transition: transform 0.2s;
+    }
+
+    .switch input:checked + .slider {
+      background: #236086;
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(14px);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="icon">🎓</span>
+    <h1>PDF Dark Reader</h1>
+  </header>
+
+  <button id="toggleBtn" class="off">
+    <span id="btnIcon">☀️</span>
+    <span id="btnText">Enable Dark Mode</span>
+  </button>
+
+  <div class="status" id="status">Checking page...</div>
+
+  <div class="persistent-row">
+    <span class="persistent-label">Toggle Persistent Mode</span>
+    <label class="switch" title="Keep theme activate on new tabs">
+      <input type="checkbox" id="persistentToggle">
+      <span class="slider"></span>
+    </label>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

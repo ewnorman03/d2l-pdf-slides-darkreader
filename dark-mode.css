@@ -1,0 +1,85 @@
+/* Color of topmost container for js pdf viewer */
+#outerContainer,
+#mainContainer,
+#viewerContainer {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+/* Darken PDF page html container 'class=page' */
+.page {
+  background-color: #2a2a2a !important;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6) !important;
+}
+
+/* Invert color 90% and rotate colors to retain some amount of normality*/
+.page canvas,
+.thumbnail canvas,
+.thumbnail .thumbnailSelectionRing canvas,
+.thumbnail img,
+.thumbnail .thumbnailSelectionRing img {
+  filter: invert(90%) hue-rotate(180deg) !important;
+}
+
+.thumbnailSelectionRing {
+  background-color: #1a1a1a !important;
+}
+
+#thumbnailView,
+#sidebarContainer,
+#sidebarContent,
+#outlineView,
+#attachmentsView,
+#layersView {
+  background-color: #252525 !important;
+  color: #ccc !important;
+}
+
+.thumbnail {
+  background-color: #333 !important;
+  border-color: #555 !important;
+}
+
+.thumbnail.selected > .thumbnailSelectionRing {
+  border-color: #4a90d9 !important;
+}
+
+#toolbarContainer,
+#toolbarViewer,
+.toolbar,
+.secondaryToolbar {
+  background-color: #2d2d2d !important;
+  border-color: #444 !important;
+}
+
+.toolbarButton,
+.secondaryToolbarButton,
+.dropdownToolbarButton {
+  color: #ddd !important;
+}
+
+.toolbarButton:hover,
+.secondaryToolbarButton:hover {
+  background-color: #3d3d3d !important;
+  color: #fff !important;
+}
+
+#toolbarContainer input,
+#toolbarContainer select,
+.toolbarField {
+  background-color: #333 !important;
+  color: #ddd !important;
+  border-color: #555 !important;
+}
+
+#findbar {
+  background-color: #2d2d2d !important;
+  border-color: #444 !important;
+  color: #ddd !important;
+}
+
+#findbar input {
+  background-color: #333 !important;
+  color: #ddd !important;
+  border-color: #555 !important;
+}

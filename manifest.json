@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "PDF Dark Reader",
+  "version": "1.0",
+  "description": "Adds a toggleable dark mode to PDF.js-based PDF viewers, likes ones used on D2L and similar instituional websites. Reduces eye strain while studying PDF docs or slides on your school website.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "PDF Dark Reader",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["dark-mode.css"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
