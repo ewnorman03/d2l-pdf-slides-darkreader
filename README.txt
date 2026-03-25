@@ -1,6 +1,10 @@
+This extension injects a dark themed stylesheet into pages (iframes) of a PDF within a PDF.js 
+viewer hosted on a given website. This means it does NOT affect locally stored PDFs
+being viewed in a browser. This also means that the extension requires access to all
+websites as it can't predict which specific domains will be hosting a PDF.js viewer.
+
 PDF Dark Reader - Manual Installation Guide
 ===========================================
-
 
 --- GOOGLE CHROME ---
 
